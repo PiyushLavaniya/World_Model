@@ -1,0 +1,43 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+##Checkpoints
+checkpoints_v0_b16/
+checkpoints_v0/
+runs/jepa_v0_b16/
+runs/jepa_v0/
+embeddings_v0_b16/
+embeddings_v0/
+
+##runs
+runs/
+
+##Markdowns
+BLOG_POST.md
+BLOG_POST_TEST.md
+BLOG_POST.md.backup
+RESEARCH_PAPER.md
+EXECUTIVE_SUMMARY.md
+DEVELOPER_GUIDE.md
+PROJECT_SUMMARY.md
+DOCUMENTATION_COMPLETE.md
+DOCUMENTATION_INDEX.md
+
+##Dataset
+dataset.jsonl
+edges.jsonl
+nodes.jsonl
+
+##Python Files
+dataset_anaysis.py
+
+##Environment Variables
+.env

@@ -1,0 +1,33 @@
+{
+  "checkpoint": "checkpoints_v0_b16/ckpt_final.pt",
+  "dataset": "dataset.jsonl",
+  "metrics": {
+    "loss_mean": 0.8722722046580669,
+    "loss_std": 0.2777775638979072,
+    "cosine_sim_mean": 0.8612503151150857,
+    "cosine_sim_std": 0.11604093419688977,
+    "cosine_sim_min": -0.01441575214266777,
+    "cosine_sim_max": 0.9863619208335876,
+    "top1_accuracy": 0.7454251126461738,
+    "top5_accuracy": 0.9937711148648649
+  },
+  "insights": {
+    "embedding_dim": 384,
+    "n_samples": 9462,
+    "pred_mean": 0.0011031865142285824,
+    "pred_std": 0.05101910978555679,
+    "target_mean": 0.0013696986716240644,
+    "target_std": 0.05101265013217926,
+    "pred_silhouette": 0.22723619639873505,
+    "target_silhouette": 0.24772584438323975,
+    "pred_pred_sim_mean": 0.140830397605896,
+    "pred_target_sim_mean": 0.8612502813339233,
+    "top1_retrieval_acc": 0.02155992390615092,
+    "top5_retrieval_acc": 0.08264637497357852
+  },
+  "config": {
+    "batch_size": 16,
+    "device": "mps",
+    "n_samples": 9462
+  }
+}
