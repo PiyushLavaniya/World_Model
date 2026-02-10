@@ -765,8 +765,8 @@ tensorboard --logdir runs/jepa_v0_b16 --port 6006
 ## 📚 Further Reading
 
 **For Implementation Details:**
-- See `RESEARCH_PAPER.md` for full technical paper
-- See `EXECUTIVE_SUMMARY.md` for quick overview
+- See `PROJECT_SUMMARY.md` for a high-level overview
+- See `DEVELOPER_GUIDE.md` for usage and code walkthroughs
 - See `dataset_analysis.md` for data structure
 
 **For Code:**
@@ -781,7 +781,6 @@ tensorboard --logdir runs/jepa_v0_b16 --port 6006
 
 ---
 
-*This architecture guide provides a visual, diagram-rich explanation of the Graph JEPA model. For mathematical details and experimental results, see the full research paper.*
+*This architecture guide provides a visual, diagram-rich explanation of the Graph JEPA model. For experiments and results, see `inference_results/` and the evaluation sections in `README.md`.*
 
 **Last Updated:** February 2026
-

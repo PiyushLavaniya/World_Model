@@ -71,19 +71,16 @@ We provide comprehensive documentation for different audiences:
 | Document                                                  | Audience         | Reading Time | Purpose                           |
 | --------------------------------------------------------- | ---------------- | ------------ | --------------------------------- |
 | **[PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)**         | Everyone         | 5 min        | One-page presentation summary     |
-| **[EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md)**     | Business/Product | 10 min       | Quick overview, results, roadmap  |
 | **[ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)**   | Technical        | 20 min       | Visual architecture with diagrams |
-| **[RESEARCH_PAPER.md](./RESEARCH_PAPER.md)**           | Researchers      | 45 min       | Full technical paper              |
 | **[DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md)**         | Developers       | 30 min       | Practical code guide              |
-| **[DOCUMENTATION_INDEX.md](./DOCUMENTATION_INDEX.md)** | All              | 5 min        | Navigation guide                  |
+| **[dataset_analysis.md](./dataset_analysis.md)**       | Data/ML          | 10 min       | Dataset structure & statistics    |
 
 ### Quick Navigation
 
-- 🎯 **Want to understand the project?** → [EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md)
+- 🎯 **Want to understand the project?** → [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)
 - 🏗️ **Want to see how it works?** → [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)
-- 📖 **Want technical details?** → [RESEARCH_PAPER.md](./RESEARCH_PAPER.md)
 - 💻 **Want to use the code?** → [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md)
-- 🎤 **Need to present?** → [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)
+- 📊 **Want dataset details?** → [dataset_analysis.md](./dataset_analysis.md)
 
 ---
 
@@ -223,8 +220,6 @@ python graph_jepa_dataset_creation.py \
 - Research & Discovery
 - Compliance & Risk
 
-**See [EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md) for detailed applications.**
-
 ---
 
 ## 🚀 Future Roadmap
@@ -246,8 +241,6 @@ python graph_jepa_dataset_creation.py \
 - [ ] Build predictive world model
 - [ ] Enable "what if" queries
 - [ ] Add planning capabilities
-
-**See [EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md) for detailed roadmap.**
 
 ---
 
@@ -295,8 +288,6 @@ Top-1:   0.40 ──→ 0.65 ──→ 0.72 ──→ 0.74
 - **Steps:** 40,000
 - **Time:** ~8-12 hours
 - **Optimizer:** AdamW (weight_decay=0.01)
-
-**See [RESEARCH_PAPER.md](./RESEARCH_PAPER.md) Appendix A for all hyperparameters.**
 
 ---
 
@@ -348,7 +339,7 @@ This work is inspired by:
 ## 📞 Contact & Support
 
 - **Issues:** [GitHub Issues](https://github.com/your-repo/issues)
-- **Documentation:** See [DOCUMENTATION_INDEX.md](./DOCUMENTATION_INDEX.md)
+- **Documentation:** Start with [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) and [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)
 - **Questions:** Open a discussion or issue
 
 ---
@@ -360,11 +351,8 @@ W_M/
 ├── 📄 Documentation
 │   ├── README.md                      # This file (landing page)
 │   ├── PROJECT_SUMMARY.md             # One-page summary
-│   ├── EXECUTIVE_SUMMARY.md           # Quick overview
 │   ├── ARCHITECTURE_GUIDE.md          # Visual architecture
-│   ├── RESEARCH_PAPER.md              # Full technical paper
 │   ├── DEVELOPER_GUIDE.md             # Developer guide
-│   ├── DOCUMENTATION_INDEX.md         # Navigation guide
 │   └── dataset_analysis.md            # Dataset structure
 │
 ├── 💻 Core Scripts
@@ -405,12 +393,12 @@ W_M/
 
 ## 🎉 Get Started!
 
-1. **Understand:** Read [EXECUTIVE_SUMMARY.md](./EXECUTIVE_SUMMARY.md) (10 min)
+1. **Understand:** Read [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) (5 min)
 2. **Explore:** Check out [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md) (20 min)
 3. **Run:** Follow quick start above (5 min)
 4. **Experiment:** See [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md) for more
 
-**Questions?** See [DOCUMENTATION_INDEX.md](./DOCUMENTATION_INDEX.md) for navigation help.
+**Questions?** Start with [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md) or open an issue.
 
 ---
 

@@ -191,3 +191,6 @@ Once trained, this model can be used for:
 **Method**: Self-supervised learning via contrastive/predictive objective  
 **Goal**: Learn robust, temporally-aware graph representations for knowledge graphs
 
+
+
+
