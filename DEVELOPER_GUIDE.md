@@ -4,7 +4,7 @@ A practical guide for developers working with the Graph JEPA codebase.
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -39,40 +39,40 @@ open inference_results/embeddings_pca.png
 
 ---
 
-## 📁 Codebase Structure
+## Codebase Structure
 
 ### File Organization
 
 ```
 W_M/
-│
-├── 📄 Documentation
-│   ├── README.md                  # Landing page and quick start
-│   ├── PROJECT_SUMMARY.md         # One-page overview
-│   ├── ARCHITECTURE_GUIDE.md      # Visual architecture guide
-│   ├── DEVELOPER_GUIDE.md         # This file
-│   └── dataset_analysis.md        # Dataset structure
-│
-├── 🔧 Core Scripts
-│   ├── main.py                    # Export from Neo4j
-│   ├── graph_jepa_dataset_creation.py  # Generate training samples
-│   ├── train_jepa_v0.py          # Training loop
-│   ├── inference.py               # Evaluation
-│   └── visualize_embeddings.py    # Analysis tools
-│
-├── 📊 Data
-│   ├── nodes.jsonl                # Raw nodes from Neo4j
-│   ├── edges.jsonl                # Raw edges from Neo4j
-│   └── dataset.jsonl              # Training samples (9,462)
-│
-├── 💾 Models & Logs
-│   ├── checkpoints_v0_b16/       # Model checkpoints
-│   ├── runs/jepa_v0_b16/         # TensorBoard logs
-│   ├── embeddings_v0_b16/        # Training embeddings
-│   └── inference_results/        # Evaluation outputs
-│
-└── ⚙️ Config
-    └── pyproject.toml             # Project dependencies
+
+  Documentation
+    README.md                  # Landing page and quick start
+    PROJECT_SUMMARY.md         # One-page overview
+    ARCHITECTURE_GUIDE.md      # Visual architecture guide
+    DEVELOPER_GUIDE.md         # This file
+    dataset_analysis.md        # Dataset structure
+
+  Core Scripts
+    main.py                    # Export from Neo4j
+    graph_jepa_dataset_creation.py  # Generate training samples
+    train_jepa_v0.py           # Training loop
+    inference.py               # Evaluation
+    visualize_embeddings.py    # Analysis tools
+
+  Data
+    nodes.jsonl                # Raw nodes from Neo4j
+    edges.jsonl                # Raw edges from Neo4j
+    dataset.jsonl              # Training samples (9,462)
+
+  Models & Logs
+    checkpoints_v0_b16/        # Model checkpoints
+    runs/jepa_v0_b16/          # TensorBoard logs
+    embeddings_v0_b16/         # Training embeddings
+    inference_results/        # Evaluation outputs
+
+  Config
+    pyproject.toml             # Project dependencies
 ```
 
 ### Key Files Explained
@@ -87,7 +87,7 @@ W_M/
 
 ---
 
-## 🏗️ Code Deep Dive
+## Code Deep Dive
 
 ### 1. Dataset Creation (`graph_jepa_dataset_creation.py`)
 
@@ -591,9 +591,9 @@ def analyze_embedding_structure(pred, target):
     mean_sim = np.mean(pairwise_sims)
     print(f"Mean pairwise similarity: {mean_sim:.4f}")
     if mean_sim > 0.8:
-        print("⚠️ WARNING: Possible collapse!")
+        print("WARNING: Possible collapse!")
     else:
-        print("✓ Good: Diverse embeddings")
+        print("OK: Diverse embeddings")
 ```
 
 #### Usage
@@ -612,7 +612,7 @@ python visualize_embeddings.py
 
 ---
 
-## 🔧 Common Tasks
+## Common Tasks
 
 ### Task 1: Train a New Model
 
@@ -715,7 +715,7 @@ python
 
 ---
 
-## 🐛 Debugging Tips
+## Debugging Tips
 
 ### Issue 1: Training Loss Not Decreasing
 
@@ -864,7 +864,7 @@ python
 
 ---
 
-## 🧪 Testing & Validation
+## Testing & Validation
 
 ### Unit Tests (Manual)
 
@@ -886,7 +886,7 @@ def test_model_forward():
     assert pred.shape == (1, 384)
     assert target.shape == (1, 384)
     assert torch.allclose(pred.norm(dim=-1), torch.ones(1))  # Normalized
-    print("✓ Model forward pass works")
+    print("OK: Model forward pass works")
 
 def test_ema_update():
     """Test EMA updates teacher"""
@@ -904,7 +904,7 @@ def test_ema_update():
     # Check teacher changed
     teacher_param_after = model.teacher.in_proj.weight
     assert not torch.allclose(teacher_param_before, teacher_param_after)
-    print("✓ EMA update works")
+    print("OK: EMA update works")
 
 # Run tests
 test_model_forward()
@@ -946,9 +946,9 @@ python inference.py \
 
 # 4. Check outputs
 if [ -f "test_results/inference_results.json" ]; then
-    echo "✓ Pipeline test passed"
+    echo "OK: Pipeline test passed"
 else
-    echo "✗ Pipeline test failed"
+    echo "FAIL: Pipeline test failed"
     exit 1
 fi
 
@@ -958,7 +958,7 @@ rm -rf test_dataset.jsonl test_checkpoints test_results
 
 ---
 
-## 📊 Performance Benchmarks
+## Performance Benchmarks
 
 ### Training Speed (Apple M1/M2 with MPS)
 
@@ -988,7 +988,7 @@ rm -rf test_dataset.jsonl test_checkpoints test_results
 
 ---
 
-## 🚀 Next Steps
+## Next Steps
 
 ### For Researchers
 
@@ -1043,7 +1043,7 @@ rm -rf test_dataset.jsonl test_checkpoints test_results
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 ### Documentation
 - [README.md](./README.md) - Landing page and quick start
@@ -1063,8 +1063,6 @@ rm -rf test_dataset.jsonl test_checkpoints test_results
 - Contribute to documentation
 
 ---
-
-**Happy Coding! 🎉**
 
 For questions or issues, refer to the documentation or open an issue.
 

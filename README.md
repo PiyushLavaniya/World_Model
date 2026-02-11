@@ -8,7 +8,7 @@
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Run inference on pre-trained model
@@ -26,18 +26,18 @@ open inference_results/embeddings_pca.png
 
 ---
 
-## 📊 Key Results
+## Key Results
 
 | Metric                      | Result                   | Interpretation                                   |
 | --------------------------- | ------------------------ | ------------------------------------------------ |
 | **Cosine Similarity** | **86.1% ± 11.6%** | Strong alignment between predictions and targets |
 | **Top-1 Retrieval**   | **74.5%**          | Correctly retrieves target in 3 out of 4 cases   |
 | **Top-5 Retrieval**   | **99.4%**          | Nearly perfect retrieval within top-5            |
-| **Embedding Quality** | ✅ Diverse, no collapse  | Learned representations are rich and meaningful  |
+| **Embedding Quality** | Diverse, no collapse | Learned representations are rich and meaningful |
 
 ---
 
-## 🎯 What is Graph JEPA?
+## What is Graph JEPA?
 
 Graph JEPA is a self-supervised learning model for temporal knowledge graphs that:
 
@@ -58,13 +58,13 @@ Context Graph                        Target Graph
  Transformer                          Mean Pool
   Predictor                                ↓
        ↓                            Target Embedding
-Pred Embedding  ──→ COSINE LOSS ←──
+Pred Embedding  → COSINE LOSS ←
   [384-dim]                         [384-dim]
 ```
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 We provide comprehensive documentation for different audiences:
 
@@ -77,14 +77,14 @@ We provide comprehensive documentation for different audiences:
 
 ### Quick Navigation
 
-- 🎯 **Want to understand the project?** → [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)
-- 🏗️ **Want to see how it works?** → [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)
-- 💻 **Want to use the code?** → [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md)
-- 📊 **Want dataset details?** → [dataset_analysis.md](./dataset_analysis.md)
+- **Want to understand the project?** → [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)
+- **Want to see how it works?** → [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)
+- **Want to use the code?** → [DEVELOPER_GUIDE.md](./DEVELOPER_GUIDE.md)
+- **Want dataset details?** → [dataset_analysis.md](./dataset_analysis.md)
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 ```bash
 # Clone repository
@@ -95,12 +95,12 @@ cd W_M
 pip install torch torch-geometric networkx matplotlib seaborn scikit-learn tensorboard tqdm
 
 # Verify installation
-python -c "import torch; import torch_geometric; print('✓ All dependencies installed')"
+python -c "import torch; import torch_geometric; print(' All dependencies installed')"
 ```
 
 ---
 
-## 🎓 Usage
+## Usage
 
 ### Training
 
@@ -150,7 +150,7 @@ tensorboard --logdir runs/jepa_v0_b16
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ### Model Components
 
@@ -170,7 +170,7 @@ tensorboard --logdir runs/jepa_v0_b16
 
 ---
 
-## 📊 Dataset
+## Dataset
 
 ### Structure
 
@@ -204,7 +204,7 @@ python graph_jepa_dataset_creation.py \
 
 ---
 
-## 🎯 Applications
+## Applications
 
 ### Immediate Use Cases
 
@@ -222,7 +222,7 @@ python graph_jepa_dataset_creation.py \
 
 ---
 
-## 🚀 Future Roadmap
+## Future Roadmap
 
 ### Phase 1: Enhanced Representations (3 months)
 
@@ -244,15 +244,15 @@ python graph_jepa_dataset_creation.py \
 
 ---
 
-## 📈 Results & Visualizations
+## Results & Visualizations
 
 ### Training Progress (40k steps)
 
 ```
 Step:      0     10k    20k    30k    40k
-Loss:    1.2 ──→ 0.9 ──→ 0.88 ──→ 0.87
-Cos Sim: 0.60 ──→ 0.78 ──→ 0.84 ──→ 0.86
-Top-1:   0.40 ──→ 0.65 ──→ 0.72 ──→ 0.74
+Loss:    1.2 → 0.9 → 0.88 → 0.87
+Cos Sim: 0.60 → 0.78 → 0.84 → 0.86
+Top-1:   0.40 → 0.65 → 0.72 → 0.74
 ```
 
 ### Visualizations
@@ -267,7 +267,7 @@ Top-1:   0.40 ──→ 0.65 ──→ 0.72 ──→ 0.74
 
 ---
 
-## 🔬 Technical Details
+## Technical Details
 
 ### Model Specifications
 
@@ -291,7 +291,7 @@ Top-1:   0.40 ──→ 0.65 ──→ 0.72 ──→ 0.74
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Areas of interest:
 
@@ -304,7 +304,7 @@ We welcome contributions! Areas of interest:
 
 ---
 
-## 📝 Citation
+## Citation
 
 If you use this work, please cite:
 
@@ -320,13 +320,13 @@ If you use this work, please cite:
 
 ---
 
-## 📄 License
+## License
 
 [Specify your license - MIT, Apache 2.0, etc.]
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 This work is inspired by:
 
@@ -336,7 +336,7 @@ This work is inspired by:
 
 ---
 
-## 📞 Contact & Support
+## Contact & Support
 
 - **Issues:** [GitHub Issues](https://github.com/your-repo/issues)
 - **Documentation:** Start with [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) and [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md)
@@ -344,54 +344,54 @@ This work is inspired by:
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 ```
 W_M/
-├── 📄 Documentation
-│   ├── README.md                      # This file (landing page)
-│   ├── PROJECT_SUMMARY.md             # One-page summary
-│   ├── ARCHITECTURE_GUIDE.md          # Visual architecture
-│   ├── DEVELOPER_GUIDE.md             # Developer guide
-│   └── dataset_analysis.md            # Dataset structure
-│
-├── 💻 Core Scripts
-│   ├── main.py                        # Neo4j export
-│   ├── graph_jepa_dataset_creation.py # Dataset generation
-│   ├── train_jepa_v0.py              # Training
-│   ├── inference.py                   # Evaluation
-│   └── visualize_embeddings.py        # Analysis
-│
-├── 📊 Data
-│   ├── nodes.jsonl                    # Raw nodes
-│   ├── edges.jsonl                    # Raw edges
-│   └── dataset.jsonl                  # Training data (9,462)
-│
-├── 💾 Models & Logs
-│   ├── checkpoints_v0_b16/           # Model checkpoints
-│   ├── runs/jepa_v0_b16/             # TensorBoard logs
-│   ├── embeddings_v0_b16/            # Training embeddings
-│   └── inference_results/            # Evaluation outputs
-│
-└── ⚙️ Config
-    ├── pyproject.toml                 # Dependencies
-    └── uv.lock                        # Lock file
+  Documentation
+    README.md                      # This file (landing page)
+    PROJECT_SUMMARY.md             # One-page summary
+    ARCHITECTURE_GUIDE.md          # Visual architecture
+    DEVELOPER_GUIDE.md             # Developer guide
+    dataset_analysis.md            # Dataset structure
+
+  Core Scripts
+    main.py                        # Neo4j export
+    graph_jepa_dataset_creation.py # Dataset generation
+    train_jepa_v0.py               # Training
+    inference.py                   # Evaluation
+    visualize_embeddings.py        # Analysis
+
+  Data
+    nodes.jsonl                    # Raw nodes
+    edges.jsonl                    # Raw edges
+    dataset.jsonl                  # Training data (9,462)
+
+  Models & Logs
+    checkpoints_v0_b16/            # Model checkpoints
+    runs/jepa_v0_b16/              # TensorBoard logs
+    embeddings_v0_b16/             # Training embeddings
+    inference_results/             # Evaluation outputs
+
+  Config
+    pyproject.toml                 # Dependencies
+    uv.lock                        # Lock file
 ```
 
 ---
 
-## ⭐ Highlights
+## Highlights
 
-- 🎯 **86.1% Cosine Similarity** - Strong graph-level learning
-- 🚀 **Self-Supervised** - No manual labeling needed
-- ⚡ **Lightweight** - 3.5M parameters, fast inference
-- 🔄 **Temporal-Aware** - Models graph evolution
-- 🎨 **Well-Documented** - 5+ comprehensive guides
-- 🧪 **Research-Ready** - Reproducible, extensible
+- **86.1% Cosine Similarity** - Strong graph-level learning
+- **Self-Supervised** - No manual labeling needed
+- **Lightweight** - 3.5M parameters, fast inference
+- **Temporal-Aware** - Models graph evolution
+- **Well-Documented** - 5+ comprehensive guides
+- **Research-Ready** - Reproducible, extensible
 
 ---
 
-## 🎉 Get Started!
+## Get Started
 
 1. **Understand:** Read [PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md) (5 min)
 2. **Explore:** Check out [ARCHITECTURE_GUIDE.md](./ARCHITECTURE_GUIDE.md) (20 min)
@@ -402,8 +402,8 @@ W_M/
 
 ---
 
-**Built with ❤️ for temporal knowledge graph understanding**
+**Built with care for temporal knowledge graph understanding**
 
 *Graph JEPA: Building world models that understand and explain knowledge graphs*
 
-**Last Updated:** February 2026 | **Status:** Research prototype, active development 🚀
+**Last Updated:** February 2026 | **Status:** Research prototype, active development

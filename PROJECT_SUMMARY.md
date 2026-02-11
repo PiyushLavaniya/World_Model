@@ -4,7 +4,7 @@ A one-page summary for presentations, demos, and quick reference.
 
 ---
 
-## 🎯 Project Overview
+## Project Overview
 
 **Graph JEPA** is a self-supervised AI model that learns to understand and predict temporal knowledge graph dynamics using Joint-Embedding Predictive Architecture (JEPA).
 
@@ -12,37 +12,37 @@ A one-page summary for presentations, demos, and quick reference.
 
 ---
 
-## 📊 Key Results (40,000 Training Steps)
+## Key Results (40,000 Training Steps)
 
 | Metric | Result | Meaning |
 |--------|--------|---------|
 | **Cosine Similarity** | **86.1% ± 11.6%** | Strong alignment between predictions and targets |
 | **Top-1 Retrieval** | **74.5%** | Correctly retrieves target in 3 out of 4 cases |
 | **Top-5 Retrieval** | **99.4%** | Nearly perfect retrieval in top-5 |
-| **Training Stability** | ✅ **No collapse** | Diverse, meaningful embeddings |
+| **Training Stability** | **No collapse** | Diverse, meaningful embeddings |
 
 **Interpretation:** The model successfully learns robust graph-level representations without labeled data.
 
 ---
 
-## 🏗️ Architecture (One Slide)
+## Architecture (One Slide)
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                      GRAPH JEPA V0                          │
-│                                                             │
-│  Context Graph                        Target Graph          │
-│  (Masked, Corrupted)                  (Clean, Complete)     │
-│         ↓                                   ↓               │
-│    Student GNN                        Teacher GNN           │
-│    (Trainable)                        (EMA, Frozen)         │
-│         ↓                                   ↓               │
-│   Transformer                           Mean Pool           │
-│    Predictor                                ↓               │
-│         ↓                            Target Embedding       │
-│   Pred Embedding  ──→ COSINE LOSS ←──                      │
-│    [384-dim]                         [384-dim]              │
-└─────────────────────────────────────────────────────────────┘
+
+                      GRAPH JEPA V0                          
+                                                             
+  Context Graph                        Target Graph          
+  (Masked, Corrupted)                  (Clean, Complete)     
+         ↓                                   ↓               
+    Student GNN                        Teacher GNN           
+    (Trainable)                        (EMA, Frozen)         
+         ↓                                   ↓               
+   Transformer                           Mean Pool           
+    Predictor                                ↓               
+         ↓                            Target Embedding       
+   Pred Embedding  → COSINE LOSS ←                      
+    [384-dim]                         [384-dim]              
+
 
 Key Innovation: Student-teacher architecture with relation-aware
 message passing learns from corrupted graphs (no labels needed)
@@ -50,13 +50,13 @@ message passing learns from corrupted graphs (no labels needed)
 
 ---
 
-## 🔬 Technical Highlights
+## Technical Highlights
 
 ### Model
 - **Student Encoder:** GraphSAGE with relation embeddings (2 layers, 384-dim)
 - **Predictor:** Transformer (4 layers, 6 heads) for graph-level prediction
 - **Teacher Encoder:** EMA-updated copy of student (momentum 0.996)
-- **Total Parameters:** 3.5M (lightweight!)
+- **Total Parameters:** 3.5M (lightweight)
 
 ### Training
 - **Loss:** Cosine similarity + optional InfoNCE (contrastive)
@@ -72,31 +72,31 @@ message passing learns from corrupted graphs (no labels needed)
 
 ---
 
-## 💡 What Makes This Special?
+## What Makes This Special?
 
 ### 1. **Self-Supervised Learning**
-❌ No expensive manual labeling  
-✅ Learns from graph structure itself  
-✅ Scales to large datasets  
+- No expensive manual labeling
+- Learns from graph structure itself
+- Scales to large datasets
 
 ### 2. **Temporal Awareness**
-❌ Not just static snapshots  
-✅ Models graph evolution over time  
-✅ Respects validity windows  
+- Not just static snapshots
+- Models graph evolution over time
+- Respects validity windows
 
 ### 3. **Robust to Corruption**
-❌ Not brittle to missing data  
-✅ Trained on masked graphs  
-✅ Handles incomplete information  
+- Not brittle to missing data
+- Trained on masked graphs
+- Handles incomplete information
 
 ### 4. **Relation-Aware**
-❌ Not one-size-fits-all edges  
-✅ 4,096 relation types handled efficiently  
-✅ Semantic relationships captured  
+- Not one-size-fits-all edges
+- 4,096 relation types handled efficiently
+- Semantic relationships captured
 
 ---
 
-## 🚀 Applications
+## Applications
 
 ### Immediate Use Cases
 1. **Graph Similarity Search** - Find similar subgraphs in knowledge base
@@ -112,7 +112,7 @@ message passing learns from corrupted graphs (no labels needed)
 
 ---
 
-## 🎯 Future Roadmap
+## Future Roadmap
 
 ### Phase 1: Enhanced Representations (Next 3 months)
 - Replace hashing with transformer embeddings (BERT/sentence-transformers)
@@ -139,27 +139,27 @@ Output: "This context represents X company's relationship with Y,
 
 ---
 
-## 📈 Training Progress
+## Training Progress
 
 ```
 Step:          0     5k    10k   15k   20k   25k   30k   35k   40k
-               │      │     │     │     │     │     │     │     │
-Loss:       1.2 ────→ 1.0 ─→ 0.9 ─→ 0.88 ─→ 0.87 (converged)
-Cos Sim:   0.60 ────→ 0.72 ─→ 0.78 ─→ 0.82 ─→ 0.86 (strong!)
-Top-1:     0.40 ────→ 0.55 ─→ 0.65 ─→ 0.70 ─→ 0.74 (good!)
+                                                        
+Loss:       1.2 → 1.0 → 0.9 → 0.88 → 0.87 (converged)
+Cos Sim:   0.60 → 0.72 → 0.78 → 0.82 → 0.86 (strong!)
+Top-1:     0.40 → 0.55 → 0.65 → 0.70 → 0.74 (good!)
 
-Status: ✓ Stable training, no collapse, consistent improvement
+Status: Stable training, no collapse, consistent improvement
 ```
 
 ---
 
-## 📊 Evaluation Highlights
+## Evaluation Highlights
 
 ### Embedding Quality
-- **Diversity:** Low pred-pred similarity (0.14) - no collapse ✓
-- **Alignment:** High pred-target similarity (0.86) - strong learning ✓
-- **Clustering:** Moderate silhouette (0.23) - rich representations ✓
-- **Normalization:** Zero mean, controlled variance - stable ✓
+- **Diversity:** Low pred-pred similarity (0.14) - no collapse
+- **Alignment:** High pred-target similarity (0.86) - strong learning
+- **Clustering:** Moderate silhouette (0.23) - rich representations
+- **Normalization:** Zero mean, controlled variance - stable
 
 ### Retrieval Performance
 - **Within batch:** 74.5% top-1 (very good)
@@ -173,7 +173,7 @@ Status: ✓ Stable training, no collapse, consistent improvement
 
 ---
 
-## 🎓 Novel Contributions
+## Novel Contributions
 
 1. **First JEPA for Temporal Knowledge Graphs**
    - Extends JEPA (successful in vision) to graph domain
@@ -194,7 +194,7 @@ Status: ✓ Stable training, no collapse, consistent improvement
 
 ---
 
-## 💻 Code & Documentation
+## Code & Documentation
 
 ### Documentation Created
 1. **[README.md](./README.md)** - Landing page and quick start (5 min read)
@@ -221,7 +221,7 @@ tensorboard --logdir runs/jepa_v0_b16
 
 ---
 
-## 🎤 Talking Points for Presentations
+## Talking Points for Presentations
 
 ### For Technical Audience
 
@@ -252,29 +252,29 @@ tensorboard --logdir runs/jepa_v0_b16
 
 ---
 
-## 🏆 Success Metrics Summary
+## Success Metrics Summary
 
 ### Technical Success
-✅ **86.1% prediction accuracy** (cosine similarity)  
-✅ **74.5% top-1 retrieval** (discriminative learning)  
-✅ **Stable training** (no collapse, smooth convergence)  
-✅ **Rich embeddings** (diverse, normalized, meaningful)  
+- **86.1% prediction accuracy** (cosine similarity)
+- **74.5% top-1 retrieval** (discriminative learning)
+- **Stable training** (no collapse, smooth convergence)
+- **Rich embeddings** (diverse, normalized, meaningful)
 
 ### Research Success
-✅ **Novel architecture** (first JEPA for temporal KGs)  
-✅ **Strong baseline** (outperforms random, shows clear learning)  
-✅ **Comprehensive evaluation** (multiple metrics, visualizations)  
-✅ **Reproducible** (documented hyperparameters, code available)  
+- **Novel architecture** (first JEPA for temporal KGs)
+- **Strong baseline** (outperforms random, shows clear learning)
+- **Comprehensive evaluation** (multiple metrics, visualizations)
+- **Reproducible** (documented hyperparameters, code available)
 
 ### Product Success
-✅ **Prototype complete** (training + inference + evaluation)  
-✅ **Production-ready** (lightweight, fast inference)  
-✅ **Extensible** (clear path to language generation)  
-✅ **Well-documented** (5 comprehensive documents)  
+- **Prototype complete** (training + inference + evaluation)
+- **Production-ready** (lightweight, fast inference)
+- **Extensible** (clear path to language generation)
+- **Well-documented** (5 comprehensive documents)
 
 ---
 
-## 📝 Citation (If Publishing)
+## Citation (If Publishing)
 
 ```bibtex
 @article{graphjepa2026,
@@ -289,7 +289,7 @@ tensorboard --logdir runs/jepa_v0_b16
 
 ---
 
-## 🤝 Collaboration Opportunities
+## Collaboration Opportunities
 
 ### We're Looking For
 1. **NLP Researchers** - Natural language generation from graphs
@@ -305,10 +305,10 @@ tensorboard --logdir runs/jepa_v0_b16
 
 ---
 
-## 📞 Contact & Links
+## Contact & Links
 
-**Project Status:** Research prototype, active development  
-**Last Updated:** February 2026  
+**Project Status:** Research prototype, active development
+**Last Updated:** February 2026
 **Model Version:** Graph JEPA V0 (40,000 steps)
 
 **Documentation:**
@@ -320,7 +320,7 @@ tensorboard --logdir runs/jepa_v0_b16
 
 ---
 
-## 🎉 Bottom Line
+## Bottom Line
 
 **We built a self-supervised AI model that learns to understand temporal knowledge graphs, achieving 86% prediction accuracy. This lays the foundation for a world model that can not only reason about structured knowledge but also explain its understanding in natural language.**
 

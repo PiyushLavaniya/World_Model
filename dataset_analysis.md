@@ -25,7 +25,7 @@ This is a **Joint-Embedding Predictive Architecture (JEPA)** dataset for trainin
     - `content`: Full content (for Episodic nodes, truncated to 512 chars)
     - `created_at`, `valid_at`, `invalid_at`: Temporal metadata
   - Temporal features: age, time-to-invalidation, is_open flag
-  
+
 - **Edges**: Relationships between nodes with:
   - `src`, `dst`: Source and destination node UUIDs
   - `etype`: Edge type (e.g., "RELATES_TO", "MENTIONS")
@@ -185,10 +185,10 @@ Once trained, this model can be used for:
 
 ## Summary
 
-**Input**: Corrupted, masked context subgraph (current state)  
-**Target**: Clean target subgraph (future/complementary state)  
-**Task**: Learn to predict target graph embeddings from context graph  
-**Method**: Self-supervised learning via contrastive/predictive objective  
+**Input**: Corrupted, masked context subgraph (current state)
+**Target**: Clean target subgraph (future/complementary state)
+**Task**: Learn to predict target graph embeddings from context graph
+**Method**: Self-supervised learning via contrastive/predictive objective
 **Goal**: Learn robust, temporally-aware graph representations for knowledge graphs
 
 
